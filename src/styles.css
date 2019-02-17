@@ -12,7 +12,7 @@ dl.outer{
   display: list-item;
   justify-content: center;
 }
-ul.inner{
+dl.inner{
   display: inline;
   justify-content: center;
   text-align: center;
@@ -39,6 +39,12 @@ h1 {
 p {
   color: red;
 }
-label{
+label.message{
   color: rgb(16, 51, 206);
+}
+label.author{
+  color: rgb(146, 16, 206);
+}
+input{
+  width: 300px;
 }

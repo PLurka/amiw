@@ -1,11 +1,16 @@
 <h1>Moje złote myśli</h1>
 <dl class="outer">
-  <ul *ngFor="let thought of thoughts; let i = index" class="inner">
+  <dl *ngFor="let message of messages; let i = index" class="inner">
     <ul class="background">
-      <label>{{thought}}</label>
+      <label>{{getDate(i)}}</label>
+      <br/>
+      <label class="message">{{message}}</label>
       <button (click)="removeThought(i)" class="usun">-</button>
+      <br/>
+      <label class="author">{{authors[i]}}</label>
     </ul>
-  </ul>
+  </dl>
 </dl>
-<input type="text" [value]="text" (input)="text = $event.target.value" (keyup.enter)="addThought()">
+<input type="message" [value]="message" (input)="message = $event.target.value" (keyup.enter)="addThought()">
+<input type="author" [value]="author" (input)="author = $event.target.value" (keyup.enter)="addThought()">
 <button (click)="addThought()" class="dodaj">+</button>
