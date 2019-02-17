@@ -33,9 +33,6 @@ export class ThoughtsService {
 
   public fetchDates(): Array<Date> {
     this.date = JSON.parse(localStorage.getItem("datesList"))
-    
-    console.log(this.date);
-    
     return this.date ? this.date : []
   }
 

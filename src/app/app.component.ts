@@ -17,8 +17,6 @@ export class AppComponent {
     this.messages = this.thoughtsService.fetchMessages()
     this.authors = this.thoughtsService.fetchAuthors()
     this.dates = this.thoughtsService.fetchDates();
-    console.log(this.dates);
-    
   }
 
   public message: String = "Twoja złota myśl..."
