@@ -16,7 +16,9 @@ export class AppComponent {
   private ngOnInit() {
     this.messages = this.thoughtsService.fetchMessages()
     this.authors = this.thoughtsService.fetchAuthors()
-    this.dates = this.thoughtsService.fetchDates()
+    this.dates = this.thoughtsService.fetchDates();
+    console.log(this.dates);
+    
   }
 
   public message: String = "Twoja złota myśl..."
@@ -26,6 +28,8 @@ export class AppComponent {
   public dates: Array<Date> = []
   public date: Date = new Date();
   public lastDate: Date = new Date();
+  public textDate: String = "";
+  public textLastDate: String = "";
 
   public addThought(): void {
     this.messages.push(this.message)
@@ -48,10 +52,9 @@ export class AppComponent {
   }
 
   public getDate(i: number): String{
-    this.date = this.dates[i];
-    this.lastDate = this.dates[i-1];
+    this.dates = this.thoughtsService.fetchDates();
     if(this.date){
-      if(!this.lastDate || (this.date.toDateString().match(this.lastDate.toDateString()) === undefined))
+      if(!this.dates[i-1] || (this.dates[i].toString().match(this.dates[i-1].toString()) === undefined))
         return this.date.toDateString()
     }
     return null

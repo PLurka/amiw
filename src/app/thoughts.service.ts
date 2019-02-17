@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ThoughtsService {
 
+  public date: Array<Date> = [];
+
   constructor() { }
 
   public saveAuthors(authors: Array<String>): void {
@@ -30,8 +32,11 @@ export class ThoughtsService {
   }
 
   public fetchDates(): Array<Date> {
-    let data = JSON.parse(localStorage.getItem("datesList"))
-    return data ? data : []
+    this.date = JSON.parse(localStorage.getItem("datesList"))
+    
+    console.log(this.date);
+    
+    return this.date ? this.date : []
   }
 
 }
