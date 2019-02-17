@@ -18,8 +18,8 @@ dl.inner{
   text-align: center;
 }
 ul.background{
-  border-color: #c00000;
-  border-top-width: 3px;
+  backface-visibility: visible;
+  
 }
 button.usun{
   width: fit-content;
@@ -40,7 +40,7 @@ p {
   color: red;
 }
 label.message{
-  color: rgb(16, 51, 206);
+  color: rgb(35, 72, 236);
 }
 label.author{
   color: rgb(146, 16, 206);

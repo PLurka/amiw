@@ -24,10 +24,6 @@ export class AppComponent {
   public messages: Array<String> = []
   public authors: Array<String> = []
   public dates: Array<Date> = []
-  public date: Date = new Date();
-  public lastDate: Date = new Date();
-  public textDate: String = "";
-  public textLastDate: String = "";
 
   public addThought(): void {
     this.messages.push(this.message)
@@ -50,9 +46,9 @@ export class AppComponent {
   }
 
   public getDate(i: number): String{
-    if(this.date){
+    if(this.dates[i]){
       if(!this.dates[i-1] || (this.dates[i].toString().match(this.dates[i-1].toString()) === undefined))
-        return this.date.toDateString()
+        return this.dates[i].toString().slice(0,10);
     }
     return null
   }
