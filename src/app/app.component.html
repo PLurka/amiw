@@ -1,9 +1,11 @@
 <h1>Moje złote myśli</h1>
-<ul>
-  <li *ngFor="let thought of thoughts; let i = index">
-    {{thought}}
-    <button (click)="removeThought(i)">Usuń</button>
-  </li>
-</ul>
-<input type="text" [value]="text" (input)="text = $event.target.value">
-<button (click)="addThought()">Dodaj</button>
+<dl class="outer">
+  <ul *ngFor="let thought of thoughts; let i = index" class="inner">
+    <ul class="background">
+      <label>{{thought}}</label>
+      <button (click)="removeThought(i)" class="usun">-</button>
+    </ul>
+  </ul>
+</dl>
+<input type="text" [value]="text" (input)="text = $event.target.value" (keyup.enter)="addThought()">
+<button (click)="addThought()" class="dodaj">+</button>

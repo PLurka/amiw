@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  text-align: center;
+  width: inherit;
+  background-image: url("background.jpg");
+  background-repeat: repeat;
+  background-color: #000000;
+}
+dl.outer{
+  text-align: center;
+  display: list-item;
+  justify-content: center;
+}
+ul.inner{
+  display: inline;
+  justify-content: center;
+  text-align: center;
+}
+ul.background{
+  border-color: #c00000;
+  border-top-width: 3px;
+}
+button.usun{
+  width: fit-content;
+  background-color: firebrick;
+  color: white;
+}
+button.dodaj{
+  width: fit-content;
+  background-color: darkgreen;
+  color: white;
+}
+h1 {
+  text-align: center;
+  width: inherit;
+  color: #FFAA00;
+}
+p {
+  color: red;
+}
+label{
+  color: rgb(16, 51, 206);
+}
