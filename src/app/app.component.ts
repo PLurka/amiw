@@ -52,7 +52,6 @@ export class AppComponent {
   }
 
   public getDate(i: number): String{
-    this.dates = this.thoughtsService.fetchDates();
     if(this.date){
       if(!this.dates[i-1] || (this.dates[i].toString().match(this.dates[i-1].toString()) === undefined))
         return this.date.toDateString()
